@@ -1,24 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
 @font-face {
   font-family: 'Excon-Regular';
-  src: local("Excon-Regular"), url("./fonts/Excon-Regular.otf") format("opentype");
+  src: local("Excon-Regular"), url("../fonts/Excon-Regular.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Excon-Medium';
-  src: local("Excon-Medium"), url("./fonts/Excon-Medium.otf") format("opentype");
+  src: local("Excon-Medium"), url("../fonts/Excon-Medium.otf") format("opentype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Excon-Bold';
-  src: local("Excon-Bold"), url("./fonts/Excon-Bold.otf") format("opentype");
+  src: local("Excon-Bold"), url("../fonts/Excon-Bold.otf") format("opentype");
   font-weight: 700;
 }
 
 @font-face {
   font-family: 'Boxing-Regular';
-  src: local("Boxing-Regular"), url("./fonts/Boxing-Regular.otf") format("opentype");
+  src: local("Boxing-Regular"), url("../fonts/Boxing-Regular.otf") format("opentype");
   font-weight: 400;
 }
 
