@@ -1,10 +1,6 @@
 import type { Config } from 'tailwindcss'
 
 export default {
-  purge: [
-    './public/index.html',
-    './src/**/*.{js,ts,jsx,tsx,mdx}'
-  ],
   content: {
     files: [
       './public/index.html',
