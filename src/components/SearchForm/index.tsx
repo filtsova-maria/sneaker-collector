@@ -3,7 +3,6 @@ import { Button } from "components/Button";
 import { TextField } from "components/TextField";
 import { MdDeleteOutline } from "react-icons/md";
 
-import "./style.css";
 
 export const SearchForm = (): JSX.Element => {
     return (
@@ -19,20 +18,10 @@ export const SearchForm = (): JSX.Element => {
                 <TextField className="text-field-instance" state="filled" /> */}
             </div>
             <div className="div-3">
-                <Button
-                    className="button-instance"
-                    icon="left"
-                    size="large"
-                    state="disabled"
-                    type="primary"
-                >Save</Button>
-                <Button
-                    className="button-2"
-                    icon="left"
-                    size="large"
-                    state="disabled"
-                    type="primary"
-                >Delete</Button>
+                <button
+                >Save</button>
+                <button
+                >Delete</button>
             </div>
         </div>
     );

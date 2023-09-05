@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 @layer components {
+  .button-primary {
+    display: inline-block;
+    background-color: theme('colors.black');
+    color: theme("colors.white");
+    border-radius: theme('borderRadius.md');
+    padding: 0.75rem 2rem;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    &:hover {
+      background-color: theme('colors.hover');
+    }
+
+    &:focus {
+      border-color: theme('colors.focus');
+      border-width: 3px;
+    }
+
+    &:disabled {
+      background-color: theme('colors.gray.80');
+      color: theme("colors.gray.50");
+    }
+
+    &:active {
+      background-color: theme('colors.red');
+    }
+  }
 }
 
 @font-face {
@@ -32,11 +59,34 @@
 body {
   margin: 0;
   font-family: Excon-Regular;
+  font-size: 16px;
+  color: theme("colors.black");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: theme("colors.bg");
 }
 
-a {
-  font-family: 'Boxing-Regular';
+h1 {
+  font-size: 4rem;
+  line-height: 100%;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  font-family: Boxing-Regular;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: Excon-Bold;
+}
+
+label {
+  color: theme("colors.gray.50");
+}

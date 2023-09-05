@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from 'pages/Main';
+import Welcome from 'pages/Welcome';
+import { Route, Switch, Redirect } from 'wouter';
+import useLocation from 'wouter/use-location';
 
 function App() {
+  const [location] = useLocation();
+  if (location === "/") {
+    return <Redirect to="/create"></Redirect>
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className='text-red'>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route path="/main">
+          <Main />
+        </Route>
+        <Route path="/create">
+          <Welcome />
+        </Route>
+      </Switch>
     </div>
   );
 }

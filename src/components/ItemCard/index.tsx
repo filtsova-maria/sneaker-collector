@@ -1,6 +1,5 @@
 import React from "react";
 import { MdDeleteOutline } from "react-icons/md";
-import "./style.css";
 
 interface Props {
   states: "hover" | "default";
