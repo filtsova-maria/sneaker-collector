@@ -10,9 +10,9 @@ interface Props {
 }
 
 
-export const Button: React.FC<Props> = ({ type, icon, iconPosition, className, children }) => {
+export const Button: React.FC<Props> = ({ type, icon, iconPosition, children }) => {
   return (
-    <button className={`button-${type}`}>
+    <button className={`button-${type} self-center min-w-max`}>
       {children}
     </button>
   );
