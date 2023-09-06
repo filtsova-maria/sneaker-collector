@@ -1,18 +1,11 @@
-import { Button, TextField } from 'components'
 import React from 'react'
-import { MdAdd, MdSearch } from 'react-icons/md'
 import CollectionImage from 'assets/collection.svg';
+import Header from './Header';
 
 export default function Main() {
   return (
     <div>
-      <div className='grid grid-cols-[2fr_1.5fr] my-14 mx-24'>
-        <h1>Your collection</h1>
-        <div className='flex gap-4 justify-center'>
-          <TextField Icon={MdSearch} placeholder='Search' />
-          <Button type='primary' IconLeft={MdAdd}>Add new sneakers</Button>
-        </div>
-      </div>
+      <Header/>
       {/* TODO: add and edit form drawers */}
       {/* TODO: extract content to a different component */}
       <div className='flex flex-col text-center items-center'>
