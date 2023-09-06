@@ -10,7 +10,7 @@ export default function Main() {
         <h1>Your collection</h1>
         <div className='flex gap-4 justify-center'>
           <TextField Icon={MdSearch} placeholder='Search' />
-          <Button type='primary' iconPosition='left' icon={MdAdd}>Add new sneakers</Button>
+          <Button type='primary' IconLeft={MdAdd}>Add new sneakers</Button>
         </div>
       </div>
       {/* TODO: add and edit form drawers */}
