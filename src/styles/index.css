@@ -12,6 +12,7 @@
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
+
     &:hover {
       background-color: theme('colors.hover');
     }
@@ -64,6 +65,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: theme("colors.bg");
+  overflow-x: hidden;
 }
 
 h1 {

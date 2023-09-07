@@ -1,42 +1,30 @@
 import React from "react";
 import { MdDeleteOutline } from "react-icons/md";
+import { Sneaker } from "types";
 
-interface Props {
-  states: "hover" | "default";
-  className: any;
-}
+interface Props extends Sneaker { };
 
-export const ItemCard = ({ states, className }: Props): JSX.Element => {
+export const ItemCard: React.FC<Props> = ({ brand, name, price, size, year }) => {
   return (
-    <div className={`item-card ${states} ${className}`}>
-      <div className="heading">
-        <div className="frame">
-          <div className="text-wrapper">Air jordan</div>
-          <div className="div">Nike</div>
-        </div>
-        <MdDeleteOutline />
+    <div onClick={() => {/* open edit modal */}}>
+      <div>
+        <h3>{name}</h3>
+        <MdDeleteOutline size={24} className="text-black mr-2" />
       </div>
-      <div className="set-time">
-        <div className="stasrt-run">
-          <div className="text-wrapper-2">2023</div>
-          <div className="div-wrapper">
-            <div className="text-wrapper-3">Year</div>
-          </div>
-        </div>
-        <div className="div-2" />
-        <div className="last-run">
-          <div className="text-wrapper-4">11US</div>
-          <div className="div-wrapper">
-            <div className="text-wrapper-3">Size</div>
-          </div>
-        </div>
-        <div className="div-2" />
-        <div className="counter">
-          <div className="text-wrapper-2">$230</div>
-          <div className="div-wrapper">
-            <div className="text-wrapper-3">Price</div>
-          </div>
-        </div>
+      <caption>{brand}</caption>
+      <div>
+        <span>
+          {year}
+        <caption>Year</caption>
+        </span>
+        <span>
+        {size}US
+        <caption>Size</caption>
+        </span>
+        <span>
+          ${price}
+        <caption>Price</caption>
+        </span>
       </div>
     </div>
   );
