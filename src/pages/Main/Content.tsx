@@ -9,9 +9,11 @@ type Props = {
 
 export const Content: React.FC<Props> = ({ items }) => {
     return (
-        <div>
+        <div className='px-24'>
             <SortBy />
-            {items.map(item => <ItemCard {...item} />)}
+            <div className='flex gap-5'>
+                {items.map(item => <ItemCard {...item} />)}
+            </div>
         </div>
     )
 }

@@ -31,6 +31,18 @@
       background-color: theme('colors.red');
     }
   }
+  .button-secondary {
+    display: inline-block;
+    border: 1px solid theme("colors.black");
+    border-radius: theme('borderRadius.md');
+    padding: 0.375rem 0.75rem;
+    color: theme("colors.black");
+    &:active {
+      background-color: theme('colors.red');
+      color: theme("colors.white");
+      border: none;
+    }
+  }
 }
 
 @font-face {
@@ -73,8 +85,13 @@ h1 {
   line-height: 100%;
 }
 
-h2 {
-  font-size: 2rem;
+h2, h3 {
+  font-size: 1.5rem;
+}
+
+
+h5, h6 {
+  font-size: 1rem;
 }
 
 h1,
@@ -82,12 +99,14 @@ h2 {
   font-family: Boxing-Regular;
 }
 
+
 h3,
 h4,
 h5,
 h6 {
   font-family: Excon-Bold;
 }
+
 
 label {
   color: theme("colors.gray.50");

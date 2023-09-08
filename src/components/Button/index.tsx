@@ -12,10 +12,10 @@ interface Props {
 
 export const Button: React.FC<Props> = ({ type, IconLeft, IconRight, children }) => {
   return (
-    <button className={`button-${type} self-center min-w-max flex`}>
-      {IconLeft ? <IconLeft size={24} className="text-white mr-2"/> : null}
+    <button className={`${type === "primary" ? "button-primary" : "button-secondary"} self-center min-w-max flex`}>
+      {IconLeft ? <IconLeft size={24} className="mr-2"/> : null}
       {children}
-      {IconRight ? <IconRight size={24} className="text-white mr-2"/> : null}
+      {IconRight ? <IconRight size={24} className="mr-2"/> : null}
     </button>
   );
 };

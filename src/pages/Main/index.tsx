@@ -15,7 +15,14 @@ export default function Main() {
       "price": 250,
       "size": 12,
       "year": 2018
-    }
+    },
+    {
+      "name": "Air Jordan",
+      "brand": "Nike",
+      "price": 250,
+      "size": 12,
+      "year": 2018
+    },
   ]);
   const [query, setQuery] = useState("");
   const renderContent = (): React.ReactNode => {
