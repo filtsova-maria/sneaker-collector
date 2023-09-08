@@ -1,10 +1,13 @@
 import { Button } from 'components'
-import React from 'react'
+import React, { useState } from 'react'
 import { MdOutlineAttachMoney, MdOutlineCalendarToday, MdOutlineCode } from 'react-icons/md'
+import { Sneaker } from 'types'
 
 type Props = {}
+type SortBy = Exclude<keyof Sneaker, "brand" | "name">;
 
 export const SortBy: React.FC<Props> = () => {
+    const [by, setBy] = useState<SortBy>("year");
     return (
         <div className='flex justify-end items-center gap-2 pb-6'>
             <caption className='pr-2'>Sort by:</caption>
