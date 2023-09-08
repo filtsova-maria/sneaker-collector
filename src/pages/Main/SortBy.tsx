@@ -4,16 +4,18 @@ import { MdOutlineAttachMoney, MdOutlineCalendarToday, MdOutlineCode } from 'rea
 import { Sneaker } from 'types'
 
 type Props = {}
-type SortBy = Exclude<keyof Sneaker, "brand" | "name">;
+type SortByCriterium = Exclude<keyof Sneaker, "brand" | "name">;
 
 export const SortBy: React.FC<Props> = () => {
-    const [by, setBy] = useState<SortBy>("year");
+    const [by, setBy] = useState<SortByCriterium>("year");
     return (
-        <div className='flex justify-end items-center gap-2 pb-6'>
-            <caption className='pr-2'>Sort by:</caption>
-            <Button type='secondary' IconLeft={MdOutlineCalendarToday}>Oldest Year</Button>
-            <Button type='secondary' IconLeft={MdOutlineCode}>Smallest Size</Button>
-            <Button type='secondary' IconLeft={MdOutlineAttachMoney}>Lowest Price</Button>
+        <div className='flex justify-end items-center pb-6'>
+            <caption className='pr-4'>Sort by:</caption>
+            <div className='flex gap-2'>
+                <Button onClick={() => {setBy("year")}}type='secondary' IconLeft={MdOutlineCalendarToday} className={by === 'year' ? "button-active" : ""}>Oldest Year</Button>
+                <Button onClick={() => {setBy("size")}}type='secondary' IconLeft={MdOutlineCode} className={by === 'size' ? "button-active" : ""}>Smallest Size</Button>
+                <Button onClick={() => {setBy("price")}}type='secondary' IconLeft={MdOutlineAttachMoney} className={by === 'price' ? "button-active" : ""}>Lowest Price</Button>
+            </div>
         </div>
     )
 }

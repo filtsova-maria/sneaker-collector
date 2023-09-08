@@ -9,7 +9,7 @@ export default function Header() {
         <h1>Your collection</h1>
         <div className='flex gap-4 justify-end'>
           <TextField Icon={MdSearch} placeholder='Search' />
-          <Button type='primary' IconLeft={MdAdd}>Add new sneakers</Button>
+          <Button onClick={() => {/* open drawer */}} type='primary' IconLeft={MdAdd}>Add new sneakers</Button>
         </div>
       </div>
   )
