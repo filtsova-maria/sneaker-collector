@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Header } from './Header';
-import { Drawer } from 'components';
+import { Button, Drawer, TextField } from 'components';
 import { Empty } from './Empty';
 import { Sneaker } from 'types';
 import { Content } from './Content';
 import { NotFound } from './NotFound';
+import { MdAdd } from 'react-icons/md';
 
 export default function Main() {
   // TODO: replace with real data from useQuery
@@ -39,10 +40,15 @@ export default function Main() {
     <div>
       <Header onClick={() => { setIsAddOpen(true) }} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setQuery(e.target.value) }} />
       {renderContent()}
-      <Drawer open={isAddOpen} closeHandler={() => { setIsAddOpen(false) }}>
-        1
-        2
-        3
+      <Drawer open={isAddOpen} closeHandler={() => { setIsAddOpen(false) }} title='Add sneakers to your collection'>
+        <form className='flex flex-col gap-6'>
+          <TextField label='Name'/>
+          <TextField label='Brand' />
+          <TextField label='Price' />
+          <TextField label='Size US' />
+          <TextField label='Year' />
+          <Button className='w-full' type='submit' onClick={(e) => { e.preventDefault(); setIsAddOpen(false)}} variant='primary' IconLeft={MdAdd}>Add new sneakers</Button>
+        </form>
       </Drawer>
     </div>
   )
