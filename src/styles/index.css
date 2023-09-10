@@ -41,13 +41,13 @@
     &:active {
       background-color: theme('colors.red');
       color: theme("colors.white");
-      border: none;
+      border: 1px solid theme("colors.red");
     }
   }
   .button-active {    
     background-color: theme('colors.red');
     color: theme("colors.white");
-    border: none;
+    border: 1px solid theme("colors.red");
   }
 }
 
