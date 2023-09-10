@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Header from './Header';
+import { Header } from './Header';
 import { Drawer } from 'components';
 import { Empty } from './Empty';
 import { Sneaker } from 'types';
@@ -25,6 +25,7 @@ export default function Main() {
     },
   ]);
   const [query, setQuery] = useState("");
+  const [isAddOpen, setIsAddOpen] = useState(false);
   const renderContent = (): React.ReactNode => {
     if (query.length > 0 && items.length === 0) {
       return <NotFound />
@@ -36,13 +37,9 @@ export default function Main() {
   }
   return (
     <div>
-      <Header />
-      {/* TODO: add and edit form drawers */}
+      <Header onClick={() => { setIsAddOpen(true) }} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setQuery(e.target.value) }} />
       {renderContent()}
-      {/* if search is not empty and no items then show not found*/}
-      <div>
-      </div>
-      <Drawer open={false}>
+      <Drawer open={isAddOpen} closeHandler={() => { setIsAddOpen(false) }}>
         1
         2
         3

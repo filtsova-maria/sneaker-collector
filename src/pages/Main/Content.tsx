@@ -12,7 +12,7 @@ export const Content: React.FC<Props> = ({ items }) => {
         <div className='px-24'>
             <SortBy />
             <div className='flex gap-5'>
-                {items.map(item => <ItemCard {...item} />)}
+                {items.map(item => <ItemCard {...item} key={`${item.name}-${item.size}-${item.price}`}/>)}
             </div>
         </div>
     )
