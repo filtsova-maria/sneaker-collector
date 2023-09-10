@@ -3,3 +3,4 @@ export { ItemCard } from "./ItemCard";
 export { SearchForm } from "./SearchForm";
 export { TextField } from "./TextField";
 export { Drawer } from "./Drawer";
+export { Form } from "./Form";

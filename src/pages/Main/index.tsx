@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Header } from './Header';
-import { Button, Drawer, TextField } from 'components';
+import { Button, Drawer, Form, TextField } from 'components';
 import { Empty } from './Empty';
 import { Sneaker } from 'types';
 import { Content } from './Content';
@@ -41,14 +41,14 @@ export default function Main() {
       <Header onClick={() => { setIsAddOpen(true) }} onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setQuery(e.target.value) }} />
       {renderContent()}
       <Drawer open={isAddOpen} closeHandler={() => { setIsAddOpen(false) }} title='Add sneakers to your collection'>
-        <form className='flex flex-col gap-6'>
+        <Form>
           <TextField label='Name'/>
           <TextField label='Brand' />
           <TextField label='Price' />
           <TextField label='Size US' />
           <TextField label='Year' />
           <Button className='w-full' type='submit' onClick={(e) => { e.preventDefault(); setIsAddOpen(false)}} variant='primary' IconLeft={MdAdd}>Add new sneakers</Button>
-        </form>
+        </Form>
       </Drawer>
     </div>
   )
